@@ -6,8 +6,8 @@
 </head>
 <body>
 <tr>
-    <tr th:each="${movies}" var="element">
-        <th:out value="${element.getId()}"/>
+    <tr th:each="movie: ${movie}">
+        <td th:text="${movie.id}"/>
     </tr>
 </tr>
 blah

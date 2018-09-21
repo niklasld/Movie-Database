@@ -15,6 +15,7 @@ public class MovieDBController {
 
     public MovieDBController() {
         movies.add(new Movies(0,1999,"Last Night With Death","http://www.link.dk","Horror",11.21));
+
     }
 
     @GetMapping("/")
@@ -22,7 +23,7 @@ public class MovieDBController {
         log.info("Index called...");
         log.fine("Index: 0-> "+movies.get(0));
 
-        model.addAttribute("index", movies);
+        model.addAttribute("movie", movies);
 
         return "index";
     }
