@@ -1,10 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Welcome to Movie Database</title>
 </head>
 <body>
-
+<tr>
+    <tr th:each="${movies}" var="element">
+        <th:out value="${element.getId()}"/>
+    </tr>
+</tr>
+blah
 </body>
 </html>
