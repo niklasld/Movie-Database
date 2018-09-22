@@ -3,13 +3,13 @@ package com.moviedb.moviedb;
 public class Movies {
 
     private int id, year;
-    private String movieTitle, link, genre, pictureLink;
-    private double duration;
+    private String movieTitle, link, genre, pictureLink, duration;
+
 
     public Movies() {
     }
 
-    public Movies(int id, int year, String movieTitle, String link, String genre, double duration, String pictureLink) {
+    public Movies(int id, int year, String movieTitle, String link, String genre, String duration, String pictureLink) {
         this.id = id;
         this.year = year;
         this.movieTitle = movieTitle;
@@ -67,11 +67,11 @@ public class Movies {
         this.genre = genre;
     }
 
-    public double getDuration() {
+    public String getDuration() {
         return duration;
     }
 
-    public void setDuration(double duration) {
+    public void setDuration(String duration) {
         this.duration = duration;
     }
 
