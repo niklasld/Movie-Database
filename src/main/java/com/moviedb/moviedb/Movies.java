@@ -3,19 +3,28 @@ package com.moviedb.moviedb;
 public class Movies {
 
     private int id, year;
-    private String movieTitle, link, genre;
-    private double duration;
+    private String movieTitle, link, genre, pictureLink, duration;
+
 
     public Movies() {
     }
 
-    public Movies(int id, int year, String movieTitle, String link, String genre, double duration) {
+    public Movies(int id, int year, String movieTitle, String link, String genre, String duration, String pictureLink) {
         this.id = id;
         this.year = year;
         this.movieTitle = movieTitle;
         this.link = link;
         this.genre = genre;
         this.duration = duration;
+        this.pictureLink = pictureLink;
+    }
+
+    public String getPictureLink() {
+        return pictureLink;
+    }
+
+    public void setPictureLink(String pictureLink) {
+        this.pictureLink = pictureLink;
     }
 
     public int getId() {
@@ -58,11 +67,11 @@ public class Movies {
         this.genre = genre;
     }
 
-    public double getDuration() {
+    public String getDuration() {
         return duration;
     }
 
-    public void setDuration(double duration) {
+    public void setDuration(String duration) {
         this.duration = duration;
     }
 
@@ -74,6 +83,7 @@ public class Movies {
                 ", movieTitle='" + movieTitle + '\'' +
                 ", link='" + link + '\'' +
                 ", genre='" + genre + '\'' +
+                ", pictureLink='" + pictureLink + '\'' +
                 ", duration=" + duration +
                 '}';
     }

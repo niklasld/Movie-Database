@@ -11,18 +11,21 @@ import java.util.logging.Logger;
 public class MovieDBController {
     Logger log = Logger.getLogger(MovieDBController.class.getName());
 
-    ArrayList<Movies> movies = new ArrayList<>();
+    private ArrayList<Movies> movies = new ArrayList<>();
+    Files file = new Files();
 
     public MovieDBController() {
-        movies.add(new Movies(0,1999,"Last Night With Death","http://www.link.dk","Horror",11.21));
-
+        file.createFile();
+        file.openFile();
+        file.readFile();
+        movies = file.returnArray();
     }
 
     @GetMapping("/")
     public String index(Model model) {
+
         log.info("Index called...");
         log.fine("Index: 0-> "+movies.get(0));
-
         model.addAttribute("movie", movies);
 
         return "index";
