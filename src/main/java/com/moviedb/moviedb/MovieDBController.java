@@ -26,7 +26,6 @@ public class MovieDBController {
 
         log.info("Index called...");
         log.fine("Index: 0-> "+movies.get(0));
-        System.out.println(movies);
         model.addAttribute("movie", movies);
 
         return "index";
