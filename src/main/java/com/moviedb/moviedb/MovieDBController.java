@@ -14,7 +14,7 @@ public class MovieDBController {
     ArrayList<Movies> movies = new ArrayList<>();
 
     public MovieDBController() {
-        movies.add(new Movies(0,1999,"Last Night With Death","http://www.link.dk","Horror",11.21));
+        movies.add(new Movies(0,1999,"Last Night With Death","http://www.link.dk","Horror",11.21, "linkbillede"));
 
     }
 
@@ -27,4 +27,14 @@ public class MovieDBController {
 
         return "index";
     }
+    @GetMapping("/display")
+    public String display(Model model){
+        log.info("Display called");
+
+        model.addAttribute("movie",movies );
+
+
+      return "display";
+    }
+
 }

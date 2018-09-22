@@ -3,19 +3,20 @@ package com.moviedb.moviedb;
 public class Movies {
 
     private int id, year;
-    private String movieTitle, link, genre;
+    private String movieTitle, link, genre, pictureLink;
     private double duration;
 
     public Movies() {
     }
 
-    public Movies(int id, int year, String movieTitle, String link, String genre, double duration) {
+    public Movies(int id, int year, String movieTitle, String link, String genre, double duration, String pictureLink) {
         this.id = id;
         this.year = year;
         this.movieTitle = movieTitle;
         this.link = link;
         this.genre = genre;
         this.duration = duration;
+        this.pictureLink = pictureLink;
     }
 
     public int getId() {
@@ -66,6 +67,14 @@ public class Movies {
         this.duration = duration;
     }
 
+    public String getPictureLink() {
+        return pictureLink;
+    }
+
+    public void setPictureLink(String pictureLink) {
+        this.pictureLink = pictureLink;
+    }
+
     @Override
     public String toString() {
         return "Movies{" +
@@ -74,6 +83,7 @@ public class Movies {
                 ", movieTitle='" + movieTitle + '\'' +
                 ", link='" + link + '\'' +
                 ", genre='" + genre + '\'' +
+                ", pictureLink='" + pictureLink + '\'' +
                 ", duration=" + duration +
                 '}';
     }
