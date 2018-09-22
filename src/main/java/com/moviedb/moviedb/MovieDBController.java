@@ -15,16 +15,20 @@ public class MovieDBController {
     ArrayList<Movies> movies = new ArrayList<>();
     int movieiD;
 
+    Files file = new Files();
+
     public MovieDBController() {
-        movies.add(new Movies(0,1999,"Last Night With Death","https://www.youtube.com/watch?v=tyKyboTBsU4","Horror",11.21, "linkbillede"));
-        movies.add(new Movies(1,2000,"Blue print to the Perfect body","http://www.link.dk","Documentary",1.58, "linkbillede2"));
+        file.createFile();
+        file.openFile();
+        file.readFile();
+        movies = file.returnArray();
     }
 
     @GetMapping("/")
     public String index(Model model) {
+
         log.info("Index called...");
         log.fine("Index: 0-> "+movies.get(0));
-
         model.addAttribute("movie", movies);
 
         return "index";
