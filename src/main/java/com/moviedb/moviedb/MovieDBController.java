@@ -11,7 +11,7 @@ import java.util.logging.Logger;
 public class MovieDBController {
     Logger log = Logger.getLogger(MovieDBController.class.getName());
 
-    ArrayList<Movies> movies = new ArrayList<>();
+    static ArrayList<Movies> movies = new ArrayList<>();
 
     public MovieDBController() {
         movies.add(new Movies(0,1999,"Last Night With Death","http://www.link.dk","Horror",11.21));
