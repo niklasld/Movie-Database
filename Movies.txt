@@ -9,4 +9,3 @@
 8 1999 Peters_Rejse9 https://link.dk horror 27:22 http://asdas.dk
 9 1999 Peters_Rejse10 https://link.dk horror 28:22 http://asdas.dk
 10 1999 Peters_Rejse11 https://link.dk horror 29:22 http://asdas.dk
-9 9999 Testting_test http://blah Genre 22:22 Http://test.dk
