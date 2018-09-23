@@ -1,43 +1,4 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
-
-<head>
-    <meta charset="UTF-8">
-    <title>Create Movie</title>
-</head>
-<body>
-
-<table>
-    <tr>
-        <td><b>Title:</b> </td>
-        <td th:text="{movie.movieTitle}"/>
-    </tr>
-    <tr>
-        <td><b>Year:</b> </td>
-        <td th:text="${movie.year}"/>
-    </tr>
-    <tr>
-        <td><b>Genre:</b> </td>
-        <td th:text="${movie.Genre}"/>
-    </tr>
-    <tr>
-        <td><b>Link:</b></td>
-        <td th:text="${movie.Link}"/>
-    </tr>
-    <tr>
-        <td><b>Duration:</b></td>
-        <td th:text="${movie.Duration}"/>
-    </tr>
-    <tr>
-        <td><b>pictureLink:</b></td>
-        <td th:text="${movie.pictureLink}"/>
-    </tr>
-</table>
-
-</body>
-</html>
-
-<!--<!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml"
                 xmlns:th="http://www.thymeleaf.org">
     <head>
@@ -46,7 +7,7 @@
     </head>
     <body>
         <h1> Create Movie</h1> <br>
-        <form>
+        <form action="#" th:action="@{/addMovie}" th:object="${movie}" method="post">
             <table>
 
                 <tr>
@@ -54,7 +15,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <input type="text" th:field="${movie.movieTitle}"/>
+                        <input type="text" th:field="${movieTitle}"/>
 
                     </td>
                 </tr>
@@ -64,7 +25,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <input type="text" th:field="${movie.year}"/>
+                        <input type="text" th:field="${year}"/>
                     </td>
                 </tr>
 
@@ -73,7 +34,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <input type="text" th:field="${movie.link}"/>
+                        <input type="text" th:field="${link}"/>
                     </td>
                 </tr>
 
@@ -82,7 +43,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <input type="text" th:field="${movie.genre}"/>
+                        <input type="text" th:field="${genre}"/>
                     </td>
                 </tr>
 
@@ -91,7 +52,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <input type="text" th:field="${movie.duration}"/>
+                        <input type="text" th:field="${duration}"/>
                     </td>
                 </tr>
 
@@ -100,7 +61,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <input type="text" th:field="${movie.pictureLink}"/>
+                        <input type="text" th:field="${pictureLink}"/>
                     </td>
                 </tr>
                 <tr>
@@ -111,4 +72,4 @@
             </table>
         </form>
     </body>
-</html>-->
+</html>
