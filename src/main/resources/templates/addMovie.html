@@ -11,11 +11,20 @@
             <table>
 
                 <tr>
+                    <th>Id:</th>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" th:name="id"/>
+
+                    </td>
+                </tr>
+                <tr>
                     <th>Title:</th>
                 </tr>
                 <tr>
                     <td>
-                        <input type="text" th:field="${movieTitle}"/>
+                        <input type="text" th:name="movieTitle"/>
 
                     </td>
                 </tr>
@@ -25,7 +34,8 @@
                 </tr>
                 <tr>
                     <td>
-                        <input type="text" th:field="${year}"/>
+                        <!--<input type="number" th:field="${year}"/>-->
+                        <input type="number" th:name="year"/>
                     </td>
                 </tr>
 
@@ -34,7 +44,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <input type="text" th:field="${link}"/>
+                        <input type="text" th:name="link"/>
                     </td>
                 </tr>
 
@@ -43,7 +53,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <input type="text" th:field="${genre}"/>
+                        <input type="text" th:name="genre"/>
                     </td>
                 </tr>
 
@@ -52,7 +62,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <input type="text" th:field="${duration}"/>
+                        <input type="text" th:name="duration"/>
                     </td>
                 </tr>
 
@@ -61,7 +71,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <input type="text" th:field="${pictureLink}"/>
+                        <input type="text" th:name="pictureLink"/>
                     </td>
                 </tr>
                 <tr>

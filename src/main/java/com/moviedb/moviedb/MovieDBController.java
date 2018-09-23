@@ -99,7 +99,11 @@ public class MovieDBController {
     }
 
     @PostMapping("/addMovie")
-    public String addMovieSubmit(@ModelAttribute Movies movies){
+    public String addMovieSubmit(@ModelAttribute Movies movies, Model model){
+
+        userService.save(movies);
+        model.addAttribute("students", userService.fetchAll());
+
         return "addMovie";
     }
 
