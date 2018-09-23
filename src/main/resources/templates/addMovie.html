@@ -7,9 +7,18 @@
     </head>
     <body>
         <h1> Create Movie</h1> <br>
-        <form action="#" th:action="@{/createMovie}" method="post">
+        <form action="#" th:action="@{/addMovie}" th:object="${movie}" method="post">
             <table>
 
+                <tr>
+                    <th>Id:</th>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" th:name="id"/>
+
+                    </td>
+                </tr>
                 <tr>
                     <th>Title:</th>
                 </tr>
@@ -25,7 +34,8 @@
                 </tr>
                 <tr>
                     <td>
-                        <input type="text" th:name="year"/>
+                        <!--<input type="number" th:field="${year}"/>-->
+                        <input type="number" th:name="year"/>
                     </td>
                 </tr>
 
