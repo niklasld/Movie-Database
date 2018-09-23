@@ -1,10 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Create Movie</title>
-</head>
-<body>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="UTF-8">
+        <title>Create Movie</title>
+    </head>
+    <body>
+        <h1> Create Movie</h1> <br>
+        <form method="POST">
+            <table>
+                <tr>
+                    <th>Title:</th>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" th:field="${movie.movieTitle}">
+                    </td>
+                </tr>
 
-</body>
+                <tr>
+                    <th>Movie name:</th>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" name="Moviename">
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>Year :</th>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" name="Year">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <button onclick="Create()">Create</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </body>
 </html>
