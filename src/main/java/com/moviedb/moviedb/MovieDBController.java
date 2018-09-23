@@ -31,10 +31,20 @@ public class MovieDBController {
     public String index(Model model) {
 
         log.info("Index called...");
-        log.fine("Index: 0-> "+movies.get(0));
+
+        //log.fine("Index: 0-> "+movies.get(0));
+
         model.addAttribute("movie", movies);
 
         return "index";
+    }
+
+   @GetMapping("/createMovie")
+    public void createMovie(Model model) {
+        log.info("createMovie called...");
+        //log.fine("createMovie: -> ");
+
+        model.addAttribute("movie",movies);
     }
 
     @GetMapping("/search")
@@ -64,6 +74,5 @@ public class MovieDBController {
 
       return "display";
     }
-
 
 }
