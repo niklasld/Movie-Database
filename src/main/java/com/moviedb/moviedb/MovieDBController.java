@@ -105,13 +105,16 @@ public class MovieDBController {
 
     @RequestMapping(value = "/createMovie")
     public void movieToArrayList (@RequestParam("movieTitle")String movieTitle,
-                             @RequestParam("year")int year,
-                             @RequestParam("link")String link,
-                             @RequestParam("genre")String genre,
-                             @RequestParam("duration")String duration,
-                             @RequestParam("pictureLink")String pictureLink) throws Exception {
+                                  @RequestParam("year")int year,
+                                  @RequestParam("link")String link,
+                                  @RequestParam("genre")String genre,
+                                  @RequestParam("duration")String duration,
+                                  @RequestParam("pictureLink")String pictureLink) throws Exception {
+
         log.info("requestmapping called");
-        movies.add(new Movies(99,year,movieTitle,link,genre,duration,pictureLink));
+        int id = movies.get(movies.size()-1).getId();
+        id++;
+        movies.add(new Movies(id,year,movieTitle,link,genre,duration,pictureLink));
         file.writeFile(movies);
         //return "99"+year+movieTitle+link+genre+duration+pictureLink;
     }
