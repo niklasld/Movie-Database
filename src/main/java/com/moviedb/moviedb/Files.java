@@ -78,8 +78,10 @@ public class Files {
         }
     }
 
-    public void writeFile() {
+    public void writeFile(ArrayList<Movies> movies) {
         try {
+            this.movies = movies;
+            clearFile();
             FileWriter fileW = new FileWriter("Movies.txt",true);
             BufferedWriter buffW = new BufferedWriter(fileW);
             clearFile();
