@@ -8,16 +8,13 @@
 <body>
     <h1>Search Movie</h1>
 
-    <!--<form method="get" action="/search">
-        <input type="text" name="title" placeholder="Enter title here...">
-        <button type="submit">Search</button>
-    </form>-->
-
-    <form>
-        <input type="text" th:field="${test}"/>
-        <input class="btn btn-primary" type="submit" value="send"/>
-
+    <form action="/searchMovie" th:action="@{/searchMovie}" method="post">
+        <input type="text" th:name="movieTitle" placeholder="Enter title here...">
+        <button type="submit" onclick="location.href='/searchMovie'">Search</button>
     </form>
+
+    <!--int id, year;
+    String movieTitle, link, genre, pictureLink, duration;-->
 
     <table>
         <tr>
@@ -25,13 +22,14 @@
             <th>Year</th>
             <th>Duration</th>
             <th>Genre</th>
+            <th></th>
         </tr>
-        <tr th:each="movie : ${movie}">
-            <span th:if="${(param.error != null) and (param.title == movie.movieTitle)}">
-                <td th:text="${movie.movieTitle}" />
-                <td th:text="${movie.year}" />
-                <td th:text="${movie.duration}" />
-                <td th:text="${movie.genre}" />
+        <tr th:each="searchMovie : ${searchMovie}">
+                <td th:text="${searchMovie.movieTitle}" />
+                <td th:text="${searchMovie.year}" />
+                <td th:text="${searchMovie.duration}" />
+                <td th:text="${searchMovie.genre}" />
+                <td><a th:href="@{'/display?id=' + ${searchMovie.id}}">view</a></td>
             </span>
         </tr>
     </table>
