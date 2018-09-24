@@ -18,7 +18,7 @@ public class MovieDBController {
 
     ArrayList<Movies> movies = new ArrayList<>();
     ArrayList<Movies> searchMovies = new ArrayList<>();
-    String test;
+
 
     int movieId;
 
@@ -69,8 +69,7 @@ public class MovieDBController {
 
         model.addAttribute("movie", movies);
         model.addAttribute("searchMovie", searchMovies);
-        //model.addAttribute("test",test);
-        log.info(test);
+
 
         searchMovies.clear();
 
