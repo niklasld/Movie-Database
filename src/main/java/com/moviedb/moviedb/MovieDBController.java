@@ -19,7 +19,6 @@ public class MovieDBController {
     ArrayList<Movies> movies = new ArrayList<>();
     ArrayList<Movies> searchMovies = new ArrayList<>();
 
-
     int movieId;
 
     Files file = new Files();
