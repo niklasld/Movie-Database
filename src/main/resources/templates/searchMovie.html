@@ -6,32 +6,36 @@
     <link rel="stylesheet" type="text/css" href="../static/css/style.css" th:href="@{/css/style.css}">
 </head>
 <body>
-    <h1>Search Movie</h1>
+    <div id="container">
+        <header>
+            <a href="/">Leek movie database</a>
+        </header>
 
-    <form action="/searchMovie" th:action="@{/searchMovie}" method="post">
-        <input type="text" th:name="movieTitle" placeholder="Enter title here...">
-        <button type="submit" onclick="location.href='/searchMovie'">Search</button>
-    </form>
+        <h1>Search Movie</h1>
 
-    <!--int id, year;
-    String movieTitle, link, genre, pictureLink, duration;-->
+        <form action="/" th:action="@{/}" method="post">
+            <input type="text" th:name="movieTitle" placeholder="Enter title here...">
+            <button type="submit" onclick="location.href='/'">Search</button>
+            <button type="button" onclick="location.href='/createMovie'">Create</button>
+        </form>
 
-    <table>
-        <tr>
-            <th>Title</th>
-            <th>Year</th>
-            <th>Duration</th>
-            <th>Genre</th>
-            <th></th>
-        </tr>
-        <tr th:each="searchMovie : ${searchMovie}">
-                <td th:text="${searchMovie.movieTitle}" />
-                <td th:text="${searchMovie.year}" />
-                <td th:text="${searchMovie.duration}" />
-                <td th:text="${searchMovie.genre}" />
-                <td><a th:href="@{'/display?id=' + ${searchMovie.id}}">view</a></td>
-            </span>
-        </tr>
-    </table>
+        <table>
+            <tr>
+                <th>Title</th>
+                <th>Year</th>
+                <th>Duration</th>
+                <th>Genre</th>
+                <th></th>
+            </tr>
+            <tr th:each="searchMovie : ${searchMovie}">
+                    <td th:text="${searchMovie.movieTitle}" />
+                    <td th:text="${searchMovie.year}" />
+                    <td th:text="${searchMovie.duration}" />
+                    <td th:text="${searchMovie.genre}" />
+                    <td><a th:href="@{'/display?id=' + ${searchMovie.id}}">view</a></td>
+                </span>
+            </tr>
+        </table>
+    </div>
 </body>
 </html>

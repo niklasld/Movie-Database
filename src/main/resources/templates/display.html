@@ -4,44 +4,42 @@
 <head>
     <meta charset="UTF-8">
     <title>DisplayMovies</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css" th:href="@{/css/style.css}">
 </head>
 <body>
-<h1>Movie Display</h1>
+    <div id="container">
+        <header>
+            <a href="/">Leek movie database</a>
+        </header>
+        <h1>Movie Display</h1>
 
-<table>
-    <tr>
-        <td><b>Title:</b> </td>
-        <td th:text="${movie.movieTitle}"/>
-    </tr>
-    <tr>
-        <td><b>Year:</b> </td>
-        <td th:text="${movie.year}"/>
-    </tr>
-    <tr>
-        <td><b>Genre:</b> </td>
-        <td th:text="${movie.Genre}"/>
-    </tr>
-    <tr>
-        <td><b>Link:</b></td>
-        <td th:text="${movie.Link}"/>
-    </tr>
-    <tr>
-        <td><b>Duration:</b></td>
-        <td th:text="${movie.Duration}"/>
-    </tr>
-    <tr>
-        <td><b>pictureLink:</b></td>
-        <td th:text="${movie.pictureLink}"/>
-    </tr>
-</table>
+        <table class="clean">
+            <tr>
+                <td><b>Title:</b> </td>
+                <td th:text="${movie.movieTitle}"/>
+            </tr>
+            <tr>
+                <td><b>Year:</b> </td>
+                <td th:text="${movie.year}"/>
+            </tr>
+            <tr>
+                <td><b>Genre:</b> </td>
+                <td th:text="${movie.Genre}"/>
+            </tr>
+            <tr>
+                <td><b>Link:</b></td>
+                <td th:text="${movie.Link}"/>
+            </tr>
+            <tr>
+                <td><b>Duration:</b></td>
+                <td th:text="${movie.Duration}"/>
+            </tr>
+            <tr>
+                <td><b>pictureLink:</b></td>
+                <td th:text="${movie.pictureLink}"/>
+            </tr>
+        </table>
 
-<p>
-
-</p>
-
-
-
-
-
+    </div>
 </body>
 </html>

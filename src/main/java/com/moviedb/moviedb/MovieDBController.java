@@ -30,7 +30,7 @@ public class MovieDBController {
         movies = file.returnArray();
     }
 
-    @GetMapping("/")
+    /*@GetMapping("/")
     public String index(Model model) {
 
         log.info("Index called...");
@@ -40,7 +40,7 @@ public class MovieDBController {
         model.addAttribute("movie", movies);
 
         return "index";
-    }
+    }*/
 
    @GetMapping("/createMovie")
    public String create(Model model){
@@ -61,7 +61,7 @@ public class MovieDBController {
         return "addMovie";
     }
 
-    @GetMapping("/searchMovie")
+    @GetMapping("/")
     public String search(Model model){
         log.info("search called...");
         //log.fine("Index: 0-> "+movies.get(0));
@@ -128,7 +128,7 @@ public class MovieDBController {
         //return "99"+year+movieTitle+link+genre+duration+pictureLink;
     }
 
-    @RequestMapping(value = "/searchMovie")
+    @RequestMapping(value = "/")
     public String movieToSearchMovie(@RequestParam("movieTitle")String movieTitle, Model model) throws  Exception{
         log.info("search requestmapping called");
         log.info("search word" + movieTitle);

@@ -4,72 +4,78 @@
     <head>
         <meta charset="UTF-8">
         <title>Create Movie</title>
+        <link rel="stylesheet" type="text/css" href="../static/css/style.css" th:href="@{/css/style.css}">
     </head>
     <body>
-        <h1> Create Movie</h1> <br>
-        <form action="#" th:action="@{/createMovie}" method="post">
-            <table>
+        <div id="container">
+            <header>
+                <a href="/">Leek movie database</a>
+            </header>
+            <h1> Create Movie</h1>
+            <form action="#" th:action="@{/createMovie}" method="post">
+                <table class="clean">
 
-                <tr>
-                    <th>Title:</th>
-                </tr>
-                <tr>
-                    <td>
-                        <input type="text" th:name="movieTitle"/>
+                    <tr>
+                        <td><label>Title:</label></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" th:name="movieTitle"/>
 
-                    </td>
-                </tr>
+                        </td>
+                    </tr>
 
-                <tr>
-                    <th>Year:</th>
-                </tr>
-                <tr>
-                    <td>
-                        <input type="text" th:name="year"/>
-                    </td>
-                </tr>
+                    <tr>
+                        <td><label>Year:</label></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" th:name="year"/>
+                        </td>
+                    </tr>
 
-                <tr>
-                    <th>Trailer Link :</th>
-                </tr>
-                <tr>
-                    <td>
-                        <input type="text" th:name="link"/>
-                    </td>
-                </tr>
+                    <tr>
+                        <td><label>Trailer Link:</label></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" th:name="link"/>
+                        </td>
+                    </tr>
 
-                <tr>
-                    <th>Genre :</th>
-                </tr>
-                <tr>
-                    <td>
-                        <input type="text" th:name="genre"/>
-                    </td>
-                </tr>
+                    <tr>
+                        <td><label>Genre:</label></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" th:name="genre"/>
+                        </td>
+                    </tr>
 
-                <tr>
-                    <th>Duration :</th>
-                </tr>
-                <tr>
-                    <td>
-                        <input type="text" th:name="duration"/>
-                    </td>
-                </tr>
+                    <tr>
+                        <td><label>Duration:</label></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" th:name="duration"/>
+                        </td>
+                    </tr>
 
-                <tr>
-                    <th>Picture Link :</th>
-                </tr>
-                <tr>
-                    <td>
-                        <input type="text" th:name="pictureLink"/>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <input class="btn btn-primary" type="submit" value="send"/>
-                    </td>
-                </tr>
-            </table>
-        </form>
+                    <tr>
+                        <td><label>Picture Link:</label></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" th:name="pictureLink"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button type="submit" value="send">Create</button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
     </body>
 </html>
