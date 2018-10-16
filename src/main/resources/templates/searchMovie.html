@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
@@ -6,39 +6,36 @@
     <link rel="stylesheet" type="text/css" href="../static/css/style.css" th:href="@{/css/style.css}">
 </head>
 <body>
-    <h1>Search Movie</h1>
+    <div id="container">
+        <header>
+            <a href="/">Leek movie database</a>
+        </header>
 
-    <form method="get" action="/search">
-        <input type="text" name="title" placeholder="Enter title here...">
-        <button type="submit">Search</button>
-    </form>
+        <h1>Search Movie</h1>
 
-<<<<<<< HEAD
-    <form>
-        <!--<input type="text" th:field="${test}"/>-->
-=======
-    <!--<form>
-        <input type="text" th:field="${test}"/>
->>>>>>> cad81a4ccd91263535b8b42005bd2e6506ef3bd3
-        <input class="btn btn-primary" type="submit" value="send"/>
+        <form action="/" th:action="@{/}" method="post">
+            <input type="text" th:name="movieTitle" placeholder="Enter title here...">
+            <button type="submit" onclick="location.href='/'">Search</button>
+            <button type="button" onclick="location.href='/createMovie'">Create</button>
+        </form>
 
-    </form>-->
-
-    <table>
-        <tr>
-            <th>Title</th>
-            <th>Year</th>
-            <th>Duration</th>
-            <th>Genre</th>
-        </tr>
-        <tr th:each="movie : ${movie}">
-            <span th:if="${(param.error != null) and (param.title == movie.movieTitle)}">
-                <td th:text="${movie.movieTitle}" />
-                <td th:text="${movie.year}" />
-                <td th:text="${movie.duration}" />
-                <td th:text="${movie.genre}" />
-            </span>
-        </tr>
-    </table>
+        <table>
+            <tr>
+                <th>Title</th>
+                <th>Year</th>
+                <th>Duration</th>
+                <th>Genre</th>
+                <th></th>
+            </tr>
+            <tr th:each="searchMovie : ${searchMovie}">
+                    <td th:text="${searchMovie.movieTitle}" />
+                    <td th:text="${searchMovie.year}" />
+                    <td th:text="${searchMovie.duration}" />
+                    <td th:text="${searchMovie.genre}" />
+                    <td><a th:href="@{'/display?id=' + ${searchMovie.id}}">view</a></td>
+                </span>
+            </tr>
+        </table>
+    </div>
 </body>
 </html>

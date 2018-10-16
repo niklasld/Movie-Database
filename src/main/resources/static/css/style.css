@@ -1,15 +1,122 @@
 *{
     padding: 0;
     margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+body{
+    background-color: #000050;
+
+    height: 100%;
+    width: 100%;
+
+    position: absolute;
+
+    overflow: auto;
+}
+
+div#container{
+    width: 100%;
+    max-width: 960px;
+    min-height: 100%;
+
+    position: relative;
+
+    margin: 0 auto;
+    padding: 0 10px;
+
+    background-color: #FFFFFF;
+}
+
+header{
+    height: 30px;
+    width: 100%;
+
+    background-color: #860000;
+    padding: 10px;
+    margin-left: -10px;
+}
+
+header a{
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 30px;
+}
+
+h1{
+    margin: 10px 0;
+}
+
+form{
+    margin-top: 10px;
+}
+
+input{
+    font-size: 15px;
+
+    background-color: #DDDDDD;
+    border: none;
+    padding: 8px;
+}
+
+button{
+    color: #FFFFFF;
+    font-size: 15px;
+    font-weight: bold;
+
+    background-color: #0795ff;
+    border: none;
+    border-radius: 0;
+    padding: 8px;
 }
 
 table{
+    border-collapse: collapse;
 
+    margin-top: 20px;
+
+    width: 100%;
 }
 
-th{
+table *{
+    border: none;
+}
+
+table tr{
+    background-color: #DDDDDD;
+}
+
+table tr:nth-child(odd){
+    background-color: #AAAAAA;
+}
+
+table tr th{
     background-color: #000000;
+
+    padding: 4px;
 
     color: #FFFFFF;
     font-weight: bold;
+    text-align: left;
+}
+
+table tr td{
+     padding: 4px;
+
+ }
+
+table.clean tr td{
+    background: #FFFFFF;
+}
+
+table tr td a{
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 12px;
+
+    background-color: #000000;
+
+    border-radius: 9px;
+
+    padding: 2px 9px;
 }

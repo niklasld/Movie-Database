@@ -3,8 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Welcome to Movie Database</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css" th:href="@{/css/style.css}">
 </head>
 <body>
+<div id="container">
+    <header>
+        <a href="/">Leek movie database</a>
+    </header>
+    <h1>Movie Display</h1>
     <tr>
         <tr th:each="movie: ${movie}">
             <td th:text="${movie}"/>
@@ -13,5 +19,6 @@
 
 
 </tr>
+</div>
 </body>
 </html>

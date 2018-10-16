@@ -17,7 +17,7 @@ public class MovieDBController {
     Logger log = Logger.getLogger(MovieDBController.class.getName());
 
     ArrayList<Movies> movies = new ArrayList<>();
-    String test;
+    ArrayList<Movies> searchMovies = new ArrayList<>();
 
     int movieId;
 
@@ -30,7 +30,7 @@ public class MovieDBController {
         movies = file.returnArray();
     }
 
-    @GetMapping("/")
+    /*@GetMapping("/")
     public String index(Model model) {
 
         log.info("Index called...");
@@ -40,7 +40,7 @@ public class MovieDBController {
         model.addAttribute("movie", movies);
 
         return "index";
-    }
+    }*/
 
    @GetMapping("/createMovie")
    public String create(Model model){
@@ -61,14 +61,16 @@ public class MovieDBController {
         return "addMovie";
     }
 
-    @GetMapping("/search")
+    @GetMapping("/")
     public String search(Model model){
         log.info("search called...");
         //log.fine("Index: 0-> "+movies.get(0));
 
         model.addAttribute("movie", movies);
-        //model.addAttribute("test",test);
-        log.info(test);
+        model.addAttribute("searchMovie", searchMovies);
+
+
+        searchMovies.clear();
 
         return "searchMovie";
     }
@@ -79,9 +81,9 @@ public class MovieDBController {
     }
 
     @GetMapping("/display")
-    public String display(Model model){
+    public String display(@RequestParam("id")int id, Model model){
         log.info("Display called");
-
+        movieId = id;
         model.addAttribute("movie",movies.get(movieId));
 
 
@@ -118,12 +120,32 @@ public class MovieDBController {
                                   @RequestParam("duration")String duration,
                                   @RequestParam("pictureLink")String pictureLink) throws Exception {
 
-        log.info("requestmapping called");
+        log.info("create requestmapping called");
         int id = movies.get(movies.size()-1).getId();
         id++;
         movies.add(new Movies(id,year,movieTitle,link,genre,duration,pictureLink));
         file.writeFile(movies);
         //return "99"+year+movieTitle+link+genre+duration+pictureLink;
+    }
+
+    @RequestMapping(value = "/")
+    public String movieToSearchMovie(@RequestParam("movieTitle")String movieTitle, Model model) throws  Exception{
+        log.info("search requestmapping called");
+        log.info("search word" + movieTitle);
+
+        movieTitle = movieTitle.toLowerCase();
+
+        searchMovies.clear();
+
+        for (Movies m: movies) {
+            if(m.getMovieTitle().toLowerCase().contains(movieTitle)){
+                searchMovies.add(m);
+            }
+        }
+
+        model.addAttribute("searchMovie", searchMovies);
+        return "searchMovie";
+
     }
 
 }
